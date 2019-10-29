@@ -1,3 +1,4 @@
+import { Employee } from './../../shared/employee.model';
 import { EmployeeService } from './../../shared/employee.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,6 +20,10 @@ export class EmployeeListComponent implements OnInit {
         } as Employee;
       })
     })
+  }
+
+  onEdit(emp: Employee) {
+    this.service.formData = Object.assign({},emp);
   }
 
 }
